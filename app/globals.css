@@ -141,21 +141,20 @@ background: linear-gradient(90deg, rgba(1,1,1,1) 4%, rgba(137,167,249,1) 96%);
   border-radius: 20px;
   position: relative;
   transition: transform 430ms;
-  height: 258px;
+  
 }
 
 .card-b:hover {
   filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.1));
   transform: scale(1.05);
   border: 1px solid #BD24DF;
-  height: 360px;
 }
 
 .hides {
   display: none;
 }
 
-.card-b:hover > .hides {
+.card-b:hover .hides {
   display: block;
 }
 

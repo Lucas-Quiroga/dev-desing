@@ -1,6 +1,6 @@
 import "./globals.css";
 import "@/node_modules/react-modal-video/scss/modal-video.scss";
-import Navbar from "./components/Navbar/index";
+import Navbar from "./components/Nav/Navbar";
 import Footer from "./components/Footer/index";
 
 export const metadata = {
