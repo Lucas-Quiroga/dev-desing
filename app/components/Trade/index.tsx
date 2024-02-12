@@ -2,7 +2,8 @@ import Image from "next/image";
 
 const Trade = () => {
   return (
-    <div className="mx-auto max-w-7xl mt-48 mb-16 px-6 relative">
+    <div className="mx-auto max-w-7xl sm:mt-48 sm:mb-16 px-6 relative">
+      <div className="radial-bg2  "></div>
       <div className="grid lg:grid-cols-2 gap-x-5">
         {/* Column-1 */}
         <div>
@@ -20,7 +21,7 @@ const Trade = () => {
           <h3 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-offwhite mb-6 text-center sm:text-start">
             Sobre Nosotros
           </h3>
-          <p className="lg:text-lg 2xl:text-xl font-normal text-white mb-16 text-center sm:text-start">
+          <p className="sm:text-xl lg:text-lg 2xl:text-xl font-normal text-white mb-16 text-center sm:text-start">
             En DevDesign.ba, somos más que un estudio de diseño digital. Somos
             creadores digitales comprometidos en transformar tus ideas en
             experiencias digitales memorables. Con una base en 🇦🇷 y una visión

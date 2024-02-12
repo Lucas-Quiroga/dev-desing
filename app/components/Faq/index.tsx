@@ -29,7 +29,7 @@ const faqdata: faqdata[] = [
 
 const Faq = () => {
   const handleDisclosureButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
+    event: React.MouseEvent<HTMLDivElement>
   ) => {
     const disclosureButtons =
       document.getElementsByClassName("disclosure-button");
@@ -46,11 +46,12 @@ const Faq = () => {
     }
   };
   return (
-    <div className="my-20 px-6" id="faq-section">
-      <h3 className="text-center text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-offwhite mb-3">
+    <div className="my-28 sm:px-6 " id="faq-section">
+      <h3 className="text-center text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-offwhite mb-3 ">
         Preguntas frecuentes
       </h3>
-      <p className="text-center text-xl sm:text-2xl  lg:text-3xl 2xl:text-4xl font-normal text-white pt-8">
+
+      <p className="text-center text-xl sm:text-3xl  lg:text-3xl 2xl:text-4xl font-normal text-white pt-8">
         Estamos aquí para responder cualquier consulta que tengas. <br /> ¡No
         dudes en contactarnos!
       </p>
@@ -64,22 +65,22 @@ const Faq = () => {
                 <div
                   className="mx-auto w-full max-w-5xl rounded-2xl bg-blue py-8 px-6 mb-5"
                   key={i}
+                  onClick={handleDisclosureButtonClick}
                 >
                   <Disclosure>
                     {({ open }) => (
                       <>
-                        <Disclosure.Button
-                          className="flex w-full justify-between rounded-lg text-offwhite sm:px-4 sm:py-2 text-left md:text-2xl font-medium disclosure-button"
-                          onClick={handleDisclosureButtonClick}
-                        >
-                          <span>{items.heading}</span>
+                        <Disclosure.Button className="flex w-full justify-between rounded-lg text-offwhite sm:px-4 sm:py-2 text-left md:text-2xl font-medium disclosure-button">
+                          <span className="text-xl sm:text-2xl">
+                            {items.heading}
+                          </span>
                           <ChevronUpIcon
                             className={`${
                               open ? "rotate-180 transform" : ""
                             } h-5 w-5 text-purple-500`}
                           />
                         </Disclosure.Button>
-                        <Disclosure.Panel className="px-4 pt-4 pb-2 md:text-lg text-bluish font-normal opacity-50">
+                        <Disclosure.Panel className="text-base px-4 pt-4 pb-2 text-center sm:text-start sm:text-lg text-bluish font-normal opacity-50">
                           {items.subheading}
                         </Disclosure.Panel>
                       </>

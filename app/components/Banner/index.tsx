@@ -46,6 +46,9 @@ const Banner = () => {
   }, []);
   return (
     <div className="bg-image relative" id="home-section">
+      <div className="radial-bg  "></div>
+      <div className="radial-bg2 hidden lg:block"></div>
+
       <div className="hidden">
         {Icons.map((icon, i) => (
           <div
@@ -60,13 +63,13 @@ const Banner = () => {
           </div>
         ))}
       </div>
-      <div className="mx-auto max-w-full sm:pb-24 px-6 z-10 relative">
+      <div className="mx-auto max-w-full sm:pb-24 px-6 z-10 relative xl:mt-[10rem] 2xl:mt-[7rem]">
         <div className="grid grid-cols-1 xl:grid-cols-2 my-16 ">
-          <div className="col-span-1 text-center mx-auto flex flex-col pt-[4rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[10rem]">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl 2xl:text-8xl font-semibold mb-5 text-white md:4px text-center">
+          <div className="col-span-1 text-center mx-auto flex flex-col pt-[1rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[10rem]">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl 2xl:text-8xl font-semibold mb-5 text-white lg:px-7 text-center">
               ¡Bienvenido a DevDesign!
             </h1>
-            <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-normal mb-5  text-center">
+            <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-normal mb-5  text-center">
               Transformando ideas <br /> en experiencias digitales
             </p>
 
@@ -82,14 +85,14 @@ const Banner = () => {
               alt="macBook-image"
               width={787}
               height={512}
-              className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[12rem] lg:right-[10rem] lg:bottom-[15rem] w-[80%] xl:w-[50%] 2xl:bottom-[22rem] 2xl:right-[15rem]"
+              className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[12rem] lg:right-[18rem] lg:bottom-[13rem] w-[80%] xl:w-[45%] xl:right-[13rem] xl:bottom-[20rem] 2xl:bottom-[22rem] 2xl:right-[18rem]"
             />
             <Image
               src={"/images/icons/Elem19.jpg"}
               alt="macBook-image"
               width={787}
               height={512}
-              className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[100%]"
+              className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[90%]"
             />
           </div>
         </div>

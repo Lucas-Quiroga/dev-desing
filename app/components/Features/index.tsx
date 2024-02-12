@@ -27,9 +27,10 @@ const featuresdata: featuresdata[] = [
 const Features = () => {
   return (
     <div
-      className="mx-auto max-w-7xl my-0 md:my-40 pt-36 px-6 relative"
+      className="mx-auto max-w-7xl my-0 md:my-40 sm:pt-36 px-4 relative"
       id="features-section"
     >
+      <div className="radial-bg  "></div>
       <div className="grid lg:grid-cols-2 gap-x-4 gap-y-4">
         {/* Column-1 */}
         <div>

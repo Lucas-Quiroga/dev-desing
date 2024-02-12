@@ -12,6 +12,14 @@ interface workdata {
 const workdata: workdata[] = [
   {
     imgSrc: "/images/Work/icon-one.svg",
+    heading: "Software personalizado",
+    subheading:
+      "Destaca en la era digital con una página web atractiva y contenido cautivador para tus redes sociales. Impulsa la presencia en línea de tu marca de manera efectiva.",
+    hiddenpara:
+      "Entendemos la importancia de la cohesión en línea, por lo que combinamos el diseño web con estrategias de contenido efectivas para impulsar tu marca de manera integral.",
+  },
+  {
+    imgSrc: "/images/Work/icon-one.svg",
     heading: "Página web + contenido para redes",
     subheading:
       "Destaca en la era digital con una página web atractiva y contenido cautivador para tus redes sociales. Impulsa la presencia en línea de tu marca de manera efectiva.",
@@ -47,28 +55,29 @@ const Work = () => {
     setHoverIndex(null);
   };
   return (
-    <div className="min-h-screen">
-      <div className="mx-auto max-w-7xl mt-16 px-6 mb-20 relative ">
-        <div className="text-center mb-14">
-          <h3 className="text-offwhite text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold mb-3 ">
+    <div>
+      <div className="mx-auto max-w-full flex flex-col items-center lg:px-6 2xl:px-0 mb-20 relative ">
+        <div className="radial-bg2  "></div>
+        <div className="text-center mb-2 sm:mb-14">
+          <h3 className="text-offwhite text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold mb-3 mt-14 sm:mt-0">
             ¿Que ofrecemos?
           </h3>
-          <p className="text-white text-xl sm:text-2xl  lg:text-3xl 2xl:text-4xl font-normal leading-8 pt-8">
+          <p className="text-white text-2xl sm:text-3xl 2xl:text-4xl font-normal leading-8 pt-8 px-3 sm:px-7">
             Potenciar tu presencia en línea con servicios especializados
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5 mt-32 min-h-full">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-y-20  gap-x-5 mt-24 sm:mt-32 min-h-full">
           {workdata.map((items, i) => (
             <div
-              className={`card-b p-8 cursor-pointer ${
-                hoverIndex === i ? "min-h-min" : "h-[330px]"
+              className={`card-b p-8 cursor-pointer w-[20rem] lg:w-[25rem]  ${
+                hoverIndex === i ? "min-h-min" : "h-[330px] 2xl:h-[380px]"
               }`}
               key={i}
               onMouseEnter={() => handleHover(i)}
               onMouseLeave={handleLeave}
             >
-              <div className="work-img-bg rounded-full flex justify-center absolute p-6">
+              <div className="work-img-bg rounded-full flex justify-center absolute p-7">
                 <Image
                   src={items.imgSrc}
                   alt={items.imgSrc}
@@ -84,13 +93,13 @@ const Work = () => {
                   height={35}
                 />
               </div>
-              <h3 className="text-2xl text-offwhite font-semibold text-center mt-8">
+              <h3 className="text-xl 2xl:text-3xl text-offwhite font-semibold text-center mt-8">
                 {items.heading}
               </h3>
-              <p className="text-base font-normal text-bluish text-center mt-2">
+              <p className="text-base 2xl:text-xl font-normal text-bluish text-center mt-2">
                 {items.subheading}
               </p>
-              <span className="text-base font-normal m-0 text-bluish text-center hides ">
+              <span className="text-base 2xl:text-xl font-normal m-0 text-bluish text-center hides ">
                 {items.hiddenpara}
               </span>
             </div>
