@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Icons } from "../Data";
+import { motion, Variants } from "framer-motion";
 
 interface Icon {
   img: string;
@@ -12,6 +13,38 @@ interface Position {
   top: number;
   left: number;
 }
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const containerImage = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Banner = () => {
   const [positions, setPositions] = useState<Position[]>([]);
@@ -66,34 +99,57 @@ const Banner = () => {
       <div className="mx-auto max-w-full sm:pb-24 px-6 z-10 relative xl:mt-[10rem] 2xl:mt-[7rem]">
         <div className="grid grid-cols-1 xl:grid-cols-2 my-16 ">
           <div className="col-span-1 text-center mx-auto flex flex-col pt-[1rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[10rem]">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl 2xl:text-8xl font-semibold mb-5 text-white lg:px-7 text-center">
-              ¡Bienvenido a DevDesign!
-            </h1>
-            <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-normal mb-5  text-center">
-              Transformando ideas <br /> en experiencias digitales
-            </p>
-
-            <div className="flex align-middle justify-center  md:text-center lg:text-start">
-              <button className="text-xl font-semibold text-white py-2 px-2 lg:px-12 navbutton mr-6 rounded-sm">
-                ¡Me interesa!
-              </button>
-            </div>
+            <motion.ul
+              className="container"
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.li className="item" variants={item}>
+                <h1 className="text-5xl md:text-7xl lg:text-7xl 2xl:text-8xl font-semibold mb-5 text-white lg:px-7 text-center">
+                  ¡Bienvenido a DevDesign!
+                </h1>
+              </motion.li>
+              <motion.li className="item" variants={item}>
+                <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-normal mb-5  text-center">
+                  Transformando ideas <br /> en experiencias digitales
+                </p>
+              </motion.li>
+              <motion.li className="item" variants={item}>
+                <div className="flex align-middle justify-center  md:text-center lg:text-start">
+                  <button className="text-xl font-semibold text-white py-2 px-2 lg:px-12 navbutton mr-6 rounded-sm">
+                    ¡Me interesa!
+                  </button>
+                </div>
+              </motion.li>
+            </motion.ul>
           </div>
           <div className="col-span-1 overflow-hidden">
-            <Image
-              src={"/images/icons/Elem21.jpg"}
-              alt="macBook-image"
-              width={787}
-              height={512}
-              className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[12rem] lg:right-[18rem] lg:bottom-[13rem] w-[80%] xl:w-[45%] xl:right-[13rem] xl:bottom-[20rem] 2xl:bottom-[22rem] 2xl:right-[18rem]"
-            />
-            <Image
-              src={"/images/icons/Elem19.jpg"}
-              alt="macBook-image"
-              width={787}
-              height={512}
-              className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[90%]"
-            />
+            <motion.ul
+              className="containerImage"
+              variants={containerImage}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.li className="item" variants={item}>
+                <Image
+                  src={"/images/icons/Elem21.jpg"}
+                  alt="macBook-image"
+                  width={787}
+                  height={512}
+                  className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[12rem] lg:right-[18rem] lg:bottom-[13rem] w-[80%] xl:w-[45%] xl:right-[13rem] xl:bottom-[20rem] 2xl:bottom-[22rem] 2xl:right-[18rem]"
+                />
+              </motion.li>
+              <motion.li className="item" variants={item}>
+                <Image
+                  src={"/images/icons/Elem19.jpg"}
+                  alt="macBook-image"
+                  width={787}
+                  height={512}
+                  className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[90%]"
+                />
+              </motion.li>
+            </motion.ul>
           </div>
         </div>
       </div>

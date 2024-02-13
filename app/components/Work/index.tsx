@@ -1,6 +1,22 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
+
+const cardVariants: Variants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 0,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.3,
+      duration: 0.8,
+    },
+  },
+};
 
 interface workdata {
   imgSrc: string;
@@ -55,58 +71,68 @@ const Work = () => {
     setHoverIndex(null);
   };
   return (
-    <div>
-      <div className="mx-auto max-w-full flex flex-col items-center lg:px-6 2xl:px-0 mb-20 relative ">
-        <div className="radial-bg2  "></div>
-        <div className="text-center mb-2 sm:mb-14">
-          <h3 className="text-offwhite text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold mb-3 mt-14 sm:mt-0">
-            ¿Que ofrecemos?
-          </h3>
-          <p className="text-white text-2xl sm:text-3xl 2xl:text-4xl font-normal leading-8 pt-8 px-3 sm:px-7">
-            Potenciar tu presencia en línea con servicios especializados
-          </p>
-        </div>
+    <motion.div
+      className="card-container"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <div>
+        <div className="mx-auto max-w-full flex flex-col items-center lg:px-6 2xl:px-0 mb-20 relative ">
+          <div className="radial-bg2  "></div>
+          <div className="text-center mb-2 sm:mb-14">
+            <h3 className="text-offwhite text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold mb-3 mt-14 sm:mt-0">
+              ¿Que ofrecemos?
+            </h3>
+            <p className="text-white text-2xl sm:text-3xl 2xl:text-4xl font-normal leading-8 pt-8 px-3 sm:px-7">
+              Potenciar tu presencia en línea con servicios especializados
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-y-20  gap-x-5 mt-24 sm:mt-32 min-h-full">
-          {workdata.map((items, i) => (
-            <div
-              className={`card-b p-8 cursor-pointer w-[20rem] lg:w-[25rem]  ${
-                hoverIndex === i ? "min-h-min" : "h-[330px] 2xl:h-[380px]"
-              }`}
-              key={i}
-              onMouseEnter={() => handleHover(i)}
-              onMouseLeave={handleLeave}
-            >
-              <div className="work-img-bg rounded-full flex justify-center absolute p-7">
-                <Image
-                  src={items.imgSrc}
-                  alt={items.imgSrc}
-                  width={44}
-                  height={44}
-                />
-              </div>
-              <div>
-                <Image
-                  src={"/images/Work/bg-arrow.svg"}
-                  alt="arrow-bg"
-                  width={85}
-                  height={35}
-                />
-              </div>
-              <h3 className="text-xl 2xl:text-3xl text-offwhite font-semibold text-center mt-8">
-                {items.heading}
-              </h3>
-              <p className="text-base 2xl:text-xl font-normal text-bluish text-center mt-2">
-                {items.subheading}
-              </p>
-              <span className="text-base 2xl:text-xl font-normal m-0 text-bluish text-center hides ">
-                {items.hiddenpara}
-              </span>
-            </div>
-          ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-y-20  gap-x-5 mt-24 sm:mt-32 min-h-full">
+            {workdata.map((items, i) => (
+              <motion.div className="card" variants={cardVariants}>
+                <div
+                  className={`card-b p-8 cursor-pointer w-[20rem] lg:w-[25rem]  ${
+                    hoverIndex === i ? "min-h-min" : "h-[330px] 2xl:h-[380px]"
+                  }`}
+                  key={i}
+                  onMouseEnter={() => handleHover(i)}
+                  onMouseLeave={handleLeave}
+                >
+                  <div className="work-img-bg rounded-full flex justify-center absolute p-7">
+                    <Image
+                      src={items.imgSrc}
+                      alt={items.imgSrc}
+                      width={44}
+                      height={44}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      src={"/images/Work/bg-arrow.svg"}
+                      alt="arrow-bg"
+                      width={85}
+                      height={35}
+                    />
+                  </div>
+
+                  <h3 className="text-xl 2xl:text-3xl text-offwhite font-semibold text-center mt-8">
+                    {items.heading}
+                  </h3>
+                  <p className="text-base 2xl:text-xl font-normal text-bluish text-center mt-2">
+                    {items.subheading}
+                  </p>
+                  <span className="text-base 2xl:text-xl font-normal m-0 text-bluish text-center hides ">
+                    {items.hiddenpara}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
