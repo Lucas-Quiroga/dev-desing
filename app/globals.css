@@ -6,6 +6,7 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #010101;
@@ -31,7 +32,7 @@ html:not([data-scroll="0"]) .navbar {
 
 .navbutton {
   background: rgb(137,167,249);
-background: linear-gradient(90deg, rgba(137,167,249,1) 4%, rgba(1,1,1,1) 96%);
+background: linear-gradient(90deg, rgba(1,1,1,1) 4%, rgba(137,167,249,1) 96%);
 }
 
 .navbutton:hover {

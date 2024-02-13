@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 interface faqdata {
   heading: string;
@@ -45,13 +48,23 @@ const Faq = () => {
       }
     }
   };
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="my-28 sm:px-6 " id="faq-section">
-      <h3 className="text-center text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-offwhite mb-3 ">
+    <div className="my-28 sm:px-6 " id="faqs">
+      <h3
+        className="text-center text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-offwhite mb-3 "
+        data-aos="zoom-in"
+      >
         Preguntas frecuentes
       </h3>
 
-      <p className="text-center text-xl sm:text-3xl  lg:text-3xl 2xl:text-4xl font-normal text-white pt-8">
+      <p
+        className="text-center text-xl sm:text-3xl  lg:text-3xl 2xl:text-4xl font-normal text-white pt-8"
+        data-aos="zoom-in"
+      >
         Estamos aquí para responder cualquier consulta que tengas. <br /> ¡No
         dudes en contactarnos!
       </p>
@@ -66,6 +79,7 @@ const Faq = () => {
                   className="mx-auto w-full max-w-5xl rounded-2xl bg-blue py-8 px-6 mb-5"
                   key={i}
                   onClick={handleDisclosureButtonClick}
+                  data-aos="zoom-in"
                 >
                   <Disclosure>
                     {({ open }) => (

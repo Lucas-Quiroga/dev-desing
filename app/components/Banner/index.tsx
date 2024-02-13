@@ -98,7 +98,7 @@ const Banner = () => {
       </div>
       <div className="mx-auto max-w-full sm:pb-24 px-6 z-10 relative xl:mt-[10rem] 2xl:mt-[7rem]">
         <div className="grid grid-cols-1 xl:grid-cols-2 my-16 ">
-          <div className="col-span-1 text-center mx-auto flex flex-col pt-[1rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[10rem]">
+          <div className="col-span-1 text-center mx-auto flex flex-col pt-[1rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[6rem]">
             <motion.ul
               className="container"
               variants={container}
@@ -116,7 +116,7 @@ const Banner = () => {
                 </p>
               </motion.li>
               <motion.li className="item" variants={item}>
-                <div className="flex align-middle justify-center  md:text-center lg:text-start">
+                <div className="flex align-middle justify-center  md:text-center lg:text-start mt-7">
                   <button className="text-xl font-semibold text-white py-2 px-2 lg:px-12 navbutton mr-6 rounded-sm">
                     ¡Me interesa!
                   </button>
@@ -124,7 +124,7 @@ const Banner = () => {
               </motion.li>
             </motion.ul>
           </div>
-          <div className="col-span-1 overflow-hidden">
+          <div className="col-span-1 overflow-hidden relative">
             <motion.ul
               className="containerImage"
               variants={containerImage}
@@ -137,7 +137,7 @@ const Banner = () => {
                   alt="macBook-image"
                   width={787}
                   height={512}
-                  className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[12rem] lg:right-[18rem] lg:bottom-[13rem] w-[80%] xl:w-[45%] xl:right-[13rem] xl:bottom-[20rem] 2xl:bottom-[22rem] 2xl:right-[18rem]"
+                  className="absolute right-[7rem] bottom-[-1rem] md:right-[14rem] md:bottom-[2rem] lg:right-[18rem] lg:bottom-[3rem] w-[80%] xl:w-[80%] xl:right-[13rem] xl:bottom-[12rem] 2xl:bottom-[18rem] 2xl:right-[22rem] 2xl:w-[70%]"
                 />
               </motion.li>
               <motion.li className="item" variants={item}>
