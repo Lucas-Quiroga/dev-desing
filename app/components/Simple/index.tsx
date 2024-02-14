@@ -30,12 +30,15 @@ const Simple = () => {
           ¡HA LLEGADO EL MOMENTO DE IMPULSAR TU NEGOCIO!
         </p>
         <div className="flex justify-center ">
-          <button
+          <a
             className="text-xl font-semibold text-white py-4 px-6 lg:px-12 navbutton"
+            href="https://api.whatsapp.com/send?phone=541121611635&text=Hola%20estoy%20interesadx%20en%20sus%20servicios%20😊"
+            target="_blank"
+            rel="noopener noreferrer"
             data-aos="zoom-in"
           >
             Explora Ahora
-          </button>
+          </a>
         </div>
       </div>
       <div className="simplesix"></div>

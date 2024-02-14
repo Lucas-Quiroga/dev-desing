@@ -97,27 +97,29 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {isOpen ? (
-        <div className="w-full flex flex-col">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.current
-                  ? "bg-gray-900"
-                  : "navlinks text-white items-center justify-center flex",
-                "px-3 py-4 rounded-md text-lg font-normal cursor-pointer block"
-              )}
-              aria-current={item.href ? "page" : undefined}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      ) : (
-        ""
-      )}
+      <div className="block lg:hidden">
+        {isOpen ? (
+          <div className="w-full flex flex-col">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={classNames(
+                  item.current
+                    ? "bg-gray-900"
+                    : "navlinks text-white items-center justify-center flex",
+                  "px-3 py-4 rounded-md text-lg font-normal cursor-pointer block hover:bg-white hover:text-black"
+                )}
+                aria-current={item.href ? "page" : undefined}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

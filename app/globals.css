@@ -152,10 +152,13 @@ background: linear-gradient(90deg, rgba(1,1,1,1) 4%, rgba(137,167,249,1) 96%);
 
 .hides {
   display: none;
+
 }
 
 .card-b:hover .hides {
   display: block;
+  display: flex;
+  align-items: center;
 }
 
 .work-img-bg {

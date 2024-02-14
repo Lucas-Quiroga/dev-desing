@@ -117,9 +117,14 @@ const Banner = () => {
               </motion.li>
               <motion.li className="item" variants={item}>
                 <div className="flex align-middle justify-center  md:text-center lg:text-start mt-7">
-                  <button className="text-xl font-semibold text-white py-2 px-2 lg:px-12 navbutton mr-6 rounded-sm">
+                  <a
+                    className="text-xl font-semibold text-white py-2 px-2 lg:px-12 navbutton mr-6 rounded-sm"
+                    href="https://api.whatsapp.com/send?phone=541121611635&text=Hola%20estoy%20interesadx%20en%20sus%20servicios%20😊"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     ¡Me interesa!
-                  </button>
+                  </a>
                 </div>
               </motion.li>
             </motion.ul>
@@ -146,7 +151,7 @@ const Banner = () => {
                   alt="macBook-image"
                   width={787}
                   height={512}
-                  className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[90%]"
+                  className="relative top-[2rem] left-[7rem] md:top-[1rem] md:left-[15rem] lg:left-[20rem] xl:left-[10rem]  items-center  flex justify-center w-[80%] xl:w-[90%] "
                 />
               </motion.li>
             </motion.ul>
