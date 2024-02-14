@@ -162,7 +162,7 @@ const Work = () => {
         <div className="grid md:hidden gap-y-20 mt-24 sm:mt-32 min-h-full">
           {workdata.map((items, i) => (
             <div className="card-d p-8 cursor-pointer w-full min-h-min" key={i}>
-              <h3 className="text-xl text-offwhite font-semibold text-center mt-8">
+              <h3 className="text-2xl text-offwhite font-semibold text-center mt-2">
                 {items.heading}
               </h3>
 

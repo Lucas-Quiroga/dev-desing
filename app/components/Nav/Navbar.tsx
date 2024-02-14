@@ -101,7 +101,7 @@ const Navbar = () => {
         {isOpen ? (
           <div className="w-full flex flex-col">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
                 className={classNames(
@@ -113,7 +113,7 @@ const Navbar = () => {
                 aria-current={item.href ? "page" : undefined}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
         ) : (
