@@ -134,6 +134,7 @@ const Work = () => {
                 {items.info?.map((infos, index) => (
                   <div
                     className={`${index > 1 ? "hides" : "flex items-center"}`}
+                    key={index}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
