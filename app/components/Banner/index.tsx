@@ -1,18 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { Icons } from "../Data";
-import { motion, Variants } from "framer-motion";
-
-interface Icon {
-  img: string;
-  name: string;
-}
-
-interface Position {
-  top: number;
-  left: number;
-}
+import React from "react";
+import { motion } from "framer-motion";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -47,55 +36,11 @@ const item = {
 };
 
 const Banner = () => {
-  const [positions, setPositions] = useState<Position[]>([]);
-
-  useEffect(() => {
-    let storedPositions = localStorage.getItem("iconPositions");
-
-    if (storedPositions) {
-      setPositions(JSON.parse(storedPositions));
-    } else {
-      const newPositions: Position[] = [];
-      while (newPositions.length < Icons.length) {
-        const newPosition: Position = {
-          top: Math.random() * 100,
-          left: Math.random() * 100,
-        };
-
-        const isTooClose = newPositions.some(
-          (pos) =>
-            Math.abs(pos.top - newPosition.top) < 10 &&
-            Math.abs(pos.left - newPosition.left) < 10
-        );
-
-        if (!isTooClose) {
-          newPositions.push(newPosition);
-        }
-      }
-
-      setPositions(newPositions);
-      localStorage.setItem("iconPositions", JSON.stringify(newPositions));
-    }
-  }, []);
   return (
     <div className="bg-image relative" id="home-section">
       <div className="radial-bg  "></div>
       <div className="radial-bg2 hidden lg:block"></div>
 
-      <div className="hidden">
-        {Icons.map((icon, i) => (
-          <div
-            key={i}
-            className="absolute"
-            style={{
-              top: `${positions[i]?.top}%`,
-              left: `${positions[i]?.left}%`,
-            }}
-          >
-            <Image src={icon.img} alt={icon.name} width={200} height={200} />
-          </div>
-        ))}
-      </div>
       <div className="mx-auto max-w-full sm:pb-24 px-6 z-10 relative xl:mt-[10rem] 2xl:mt-[7rem]">
         <div className="grid grid-cols-1 xl:grid-cols-2 my-16 ">
           <div className="col-span-1 text-center mx-auto flex flex-col pt-[1rem] sm:pt-[8rem] md:pt-[1rem] 2xl:pt-[6rem]">
