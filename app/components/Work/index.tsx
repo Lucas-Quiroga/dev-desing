@@ -159,30 +159,10 @@ const Work = () => {
           ))}
         </div>
 
-        <div className="grid md:hidden md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-y-20 md:gap-x-8 lg:gap-x-20  2xl:gap-x-5 mt-24 sm:mt-32 min-h-full">
+        <div className="grid md:hidden gap-y-20 mt-24 sm:mt-32 min-h-full">
           {workdata.map((items, i) => (
-            <div
-              className="card-d p-8 cursor-pointer w-[20rem] h-[440px]lg:w-[25rem] min-h-min"
-              key={i}
-            >
-              <div className="work-img-bg rounded-full flex justify-center absolute p-7">
-                <Image
-                  src={items.imgSrc}
-                  alt={items.imgSrc}
-                  width={44}
-                  height={44}
-                />
-              </div>
-              <div>
-                <Image
-                  src={"/images/Work/bg-arrow.svg"}
-                  alt="arrow-bg"
-                  width={85}
-                  height={35}
-                />
-              </div>
-
-              <h3 className="text-xl lg:text-2xl 2xl:text-3xl text-offwhite font-semibold text-center mt-8">
+            <div className="card-d p-8 cursor-pointer w-full min-h-min" key={i}>
+              <h3 className="text-xl text-offwhite font-semibold text-center mt-8">
                 {items.heading}
               </h3>
 
@@ -191,7 +171,7 @@ const Work = () => {
                   <div className="flex items-center" key={index}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-12 h-12 2xl:h-20 2xl:w-20 text-white"
+                      className="w-12 h-12 text-white"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -202,7 +182,7 @@ const Work = () => {
                       />
                     </svg>
 
-                    <span className="mx-4 text-white text-base lg:text-xl font-normal mt-2">
+                    <span className="mx-4 text-white text-base font-normal mt-2">
                       {infos}
                     </span>
                   </div>
