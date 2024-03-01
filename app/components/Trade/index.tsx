@@ -39,13 +39,13 @@ const Trade = () => {
           <div>
             <img
               className="object-cover rounded-xl aspect-square"
-              src="https://res.cloudinary.com/dncmrwppr/image/upload/v1707851589/WhatsApp_Image_2024-02-13_at_15.59.13_d89d96dc-removebg-preview_abyprq.png"
+              src="https://res.cloudinary.com/dncmrwppr/image/upload/v1709259223/WhatsApp_Image_2024-02-27_at_22.36.36_9df42910_jxam22.jpg"
               alt="Noeli Leta"
               data-aos="zoom-in"
             />
 
             <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
-              Noeli Leta
+              Noelí Leta
             </h1>
 
             <p className="mt-2 text-white capitalize dark:text-gray-300">

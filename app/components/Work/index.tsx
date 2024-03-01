@@ -64,7 +64,6 @@ const workdata: workdata[] = [
     hiddenpara:
       "Desde textos persuasivos hasta visuales impactantes, trabajamos para amplificar tu presencia en línea, convirtiendo seguidores en clientes potenciales y fortaleciendo la conexión con tu audiencia.",
     info: [
-      "Estrategias de contenido adaptadas a la identidad y voz de tu marca.",
       "Publicación regular para mantener la relevancia y la conexión con tu audiencia.",
       "Crea contenido relevante que se alinee con las tendencias del momento.",
       "Creación de contenido multimedia (imágenes, videos, infografías) para mayor impacto.",
